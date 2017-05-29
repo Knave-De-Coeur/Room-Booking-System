@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="client.DeleteUserController">
+   <children>
+      <Label layoutX="42.0" layoutY="36.0" text="Select a user to delete: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="usersTable" layoutX="42.0" layoutY="93.0" prefHeight="229.0" prefWidth="520.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Name" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="75.0" text="Surname" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="surname" />
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Username" >
+                <cellValueFactory>
+                  <PropertyValueFactory property="username" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Password" >
+                <cellValueFactory>
+                  <PropertyValueFactory property="password" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Admin Privilages:" >
+                <cellValueFactory>
+                  <PropertyValueFactory property="admin" />
+              </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+            </FXCollections>
+        </items>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="shwUsrs" layoutX="42.0" layoutY="340.0" mnemonicParsing="false" onAction="#showUsers" text="Show all Users" />
+      <Button fx:id="deleteUser" layoutX="484.0" layoutY="340.0" mnemonicParsing="false" onAction="#removeUsers" text="Delete User" />
+   </children>
+</AnchorPane>

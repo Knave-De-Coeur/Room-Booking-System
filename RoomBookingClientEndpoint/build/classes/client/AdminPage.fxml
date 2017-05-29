@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.AdminController">
+   <children>
+      <Label layoutX="110.0" layoutY="25.0" text="Welcome to the Admin Page">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="bookings" editable="true" layoutX="52.0" layoutY="240.0" prefHeight="217.0" prefWidth="496.0">
+        <columns>
+          <TableColumn prefWidth="95.0" text="Room Name">
+              <cellValueFactory>
+                  <PropertyValueFactory property="roomName" />
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Lecturer Name:">
+                <cellValueFactory>
+                  <PropertyValueFactory property="lecturerName" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Lecturer Surname"> 
+                <cellValueFactory>
+                  <PropertyValueFactory property="lecturerSurname" />
+              </cellValueFactory>
+            </TableColumn>
+          <TableColumn prefWidth="97.0" text="Module">
+              <cellValueFactory>
+                  <PropertyValueFactory property="moduleName" />
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="99.0" text="Starts at">
+                <cellValueFactory>
+                  <PropertyValueFactory property="start_at" />
+              </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="101.0" text="Ends at">
+                <cellValueFactory>
+                  <PropertyValueFactory property="end_at" />
+              </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+            </FXCollections>
+        </items>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="printBookings" layoutX="415.0" layoutY="150.0" mnemonicParsing="false" onAction="#addRows" text="Show all the bookings" />
+      <Button fx:id="opnNewRoom" layoutX="52.0" layoutY="77.0" mnemonicParsing="false" onAction="#openWindow" text="Add Room" />
+      <Button fx:id="opnNewModule" layoutX="173.0" layoutY="77.0" mnemonicParsing="false" onAction="#openWindow" text="Add Module" />
+      <Button fx:id="opnNewUser" layoutX="300.0" layoutY="77.0" mnemonicParsing="false" onAction="#openWindow" text="Add User" />
+      <Button fx:id="opnDltRoom" layoutX="52.0" layoutY="150.0" mnemonicParsing="false" onAction="#openWindow" text="Delete Room" />
+      <Button fx:id="opnDltModule" layoutX="173.0" layoutY="150.0" mnemonicParsing="false" onAction="#openWindow" text="Delete Module" />
+      <Button fx:id="opnDltUser" layoutX="300.0" layoutY="150.0" mnemonicParsing="false" onAction="#openWindow" text="Delete User" />
+      <Button fx:id="opnNewBooking" layoutX="415.0" layoutY="77.0" mnemonicParsing="false" onAction="#openWindow" text="Create Booking" />
+   </children>
+</AnchorPane>
